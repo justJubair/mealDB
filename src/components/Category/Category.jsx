@@ -12,15 +12,17 @@ const Category = ({ category }) => {
     navigate(`/categories/${strCategory}`)
     }
   return (
-    <div className="border-2 border-gray-200 p-4 text-center space-y-2 flex flex-col">
-      <img src={strCategoryThumb} alt="" />
-      <h3 className="font-semibold">Category Id: {idCategory}</h3>
-      <h2 className="font-bold text-xl text-green-600">{strCategory}</h2>
-      <p className="text-gray-500 flex-grow text-xs">
-        <small>{strCategoryDescription}</small>
-      </p>
-      <button onClick={handleDetails} className="btn bg-green-400">Details</button>
+    <div className="card card-compact bg-base-100 shadow-xl">
+    <figure><img src={strCategoryThumb} alt={strCategory} /></figure>
+    <div className="card-body">
+      <h2 className="card-title">{strCategory}</h2>
+      <h3>Category Id: {idCategory}</h3>
+      <p>{strCategoryDescription}</p>
+      <div className="card-actions justify-end">
+        <button onClick={handleDetails} className="btn btn-primary">Details</button>
+      </div>
     </div>
+  </div>
   );
 };
 
