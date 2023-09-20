@@ -16,8 +16,8 @@ const MainLayout= createBrowserRouter(
     element: <Home/>,
     children: [
       {
-        path: '/search',
-        loader: ()=> fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=pasta'),
+        path: '/search/:name',
+        loader: ({params})=> fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${params.name}`),
         element: <HomeContent/>
       },
       {
