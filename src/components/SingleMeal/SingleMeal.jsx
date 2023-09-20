@@ -13,7 +13,7 @@ const SingleMeal = ({meal}) => {
       <h3>Meal Id: {idMeal}</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, molestias?</p>
       <div className="card-actions">
-        <button className="btn btn-primary">Eat now</button>
+        <button className="btn bg-yellow-500">Eat now</button>
       </div>
     </div>
   </div>

@@ -19,7 +19,7 @@ const Category = ({ category }) => {
       <h3>Category Id: {idCategory}</h3>
       <p>{strCategoryDescription}</p>
       <div className="card-actions justify-end">
-        <button onClick={handleDetails} className="btn btn-primary">Details</button>
+        <button onClick={handleDetails} className="btn bg-yellow-500">Details</button>
       </div>
     </div>
   </div>

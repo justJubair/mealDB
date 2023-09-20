@@ -8,13 +8,23 @@ import About from "./components/About/About"
 import Contact from "./components/Contact/Contact"
 import CategoryDetails from "./pages/CategoryDetails/CategoryDetails";
 import HomeContent from "./pages/HomeContent/HomeContent";
+import SearchBar from "./components/SearchBar/SearchBar";
+import SearchMealDetails from "./pages/SearchMealDetails/SearchMealDetails";
 
 const MainLayout= createBrowserRouter(
    [{
     path: '/',
-    
     element: <Home/>,
     children: [
+      {
+        path: '/',
+        element: <SearchBar/>
+      },
+      {
+        path: '/search/details/:mealId',
+        loader: ({params})=> fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${params.mealId}`),
+        element: <SearchMealDetails/>
+      },
       {
         path: '/search/:name',
         loader: ({params})=> fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${params.name}`),
