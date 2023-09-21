@@ -22,7 +22,7 @@ const SearchMealDetails = () => {
       <p>Meal Id: {idMeal}</p>
       <p><small>{strCategory}</small></p>
       <small>{strArea}</small>
-      <p className="mb-5">{strInstructions}</p>
+      <p className="mb-5">{strInstructions.length > 500 ? 'Savor the exquisite flavors of our Lemon Herb Grilled Salmon. Tender, flaky salmon fillet marinated in zesty lemon, fragrant herbs, and a hint of garlic, then expertly grilled to perfection. This dish is a symphony of fresh, vibrant tastes that will delight your palate and leave you craving for more. Served with a side of seasonal vegetables and buttery garlic mashed potatoes, its a culinary experience thats both light and indulgent. Perfect for those seeking a healthy yet indulgent dining option.' : strInstructions}</p>
       <button onClick={handleGoHome} className="btn bg-yellow-500 border-none">Go Home</button>
     </div>
   </div>
