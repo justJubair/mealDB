@@ -1,10 +1,11 @@
-import { useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
   const navigate = useNavigate();
   const handleSearch = (e) => {
     e.preventDefault();
     const searchMeal = e.target.search.value;
+   
     navigate(`/search/${searchMeal}`);
     e.target.search.value = "";
   };

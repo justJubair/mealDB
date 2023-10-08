@@ -1,8 +1,8 @@
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const HomeContent = () => {
   const { meals: searchedMeal } = useLoaderData();
-  const nagivate = useNavigate();
+
   const {
     idMeal,
     strArea,
@@ -11,9 +11,7 @@ const HomeContent = () => {
     strInstructions,
     strMeal,
   } = searchedMeal[0];
-  const handleSearchDetails = ()=>{
-    nagivate(`/search/details/${idMeal}`)
-  }
+ 
   return (
    <div>
    
@@ -28,7 +26,7 @@ const HomeContent = () => {
         <small>{strArea}</small>
         <p>{strInstructions}</p>
         <div className="card-actions justify-end">
-          <button onClick={handleSearchDetails} className="btn bg-yellow-500">Details</button>
+          <Link to={`/search/details/${idMeal}`} state={strMeal} className="btn bg-yellow-500">Details</Link>
         </div>
       </div>
     </div>
